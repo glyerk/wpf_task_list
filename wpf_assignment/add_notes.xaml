@@ -1,0 +1,78 @@
+﻿<Window x:Class="wpf_assignment.AddNotes"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Add new note"
+        Height="143" 
+        Width="300" 
+        ResizeMode="NoResize" 
+        WindowStartupLocation="CenterScreen"
+        KeyDown="HotKeysCatcher">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition
+                Height="*"/>
+            <RowDefinition
+                Height="25"/>
+            <RowDefinition
+                Height="35"
+                />
+        </Grid.RowDefinitions>
+        <TextBlock Text="Enter new note and set up priority"
+                   HorizontalAlignment="Center"
+                   Grid.Row="0"
+                   Height="20"
+                   Margin="0,5,0,0"
+                   VerticalAlignment="Top"/>
+        <TextBox x:Name="ResponseTextBox"
+                 Grid.Row="0"
+                 Margin="5,25,5,0"
+                 GotFocus="ResponseTextBox_OnGotFocus" TabIndex="0" />
+
+        <StackPanel Orientation="Horizontal"
+                    Margin="5,0,5,0"
+                    Width="260"
+                    Grid.Row="1">
+            <RadioButton x:Name="NormalPriority"
+                         Content="Normal"
+                         HorizontalAlignment="Left"
+                         Margin="0,0,0,0"
+                         VerticalAlignment="Center"
+                         Width="80"
+                         GroupName="Status" IsChecked="True" TabIndex="2"/>
+            <RadioButton x:Name="CriticalPriority"
+                         Content="Critical"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         Width="80"
+                         GroupName="Status"
+                         Margin="5,0,5,0" TabIndex="3"
+                         />
+            <RadioButton x:Name="PostponedPriority" 
+                         Content="Postponed"
+                         HorizontalAlignment="Right"
+                         VerticalAlignment="Center"
+                         Width="80"
+                         GroupName="Status"
+                         Margin="0,0,0,0" TabIndex="4"/>
+        </StackPanel>
+        <Button Content="OK" 
+                Grid.Row="2"
+                Width="75"
+                Height="25"
+                Click="OKButton_Click"
+                HorizontalAlignment="Left"
+                Margin="60,3,0,5" TabIndex="5"
+                />
+        <Button Content="Cancel" 
+                Grid.Row="2"
+                Width="75"
+                Height="25"
+                Margin="0,3,60,5"
+                HorizontalAlignment="Right"
+                Click="CancelButton_Click" TabIndex="6"
+                />
+    </Grid>
+</Window>
